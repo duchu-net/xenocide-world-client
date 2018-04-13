@@ -1,6 +1,6 @@
 import React from 'react'
 import { RaisedButton } from 'material-ui'
-import { generateNewGalaxie } from 'xenocide-world-generator'
+import { Galaxy, Grid, Star, Random } from 'xenocide-world-generator'
 
 
 class App extends React.Component {
@@ -12,15 +12,18 @@ class App extends React.Component {
   }
 
   generate() {
+    // console.log(Star, Random);
+    // console.log(xeno);
     Promise.resolve()
-      .then(() => generateNewGalaxie({
-        onUpdate: p => {
-          this.setState({ generation_progress: {
-            name: p.getCurrentActionName(),
-            percentage: (p.getProgress() * 100).toFixed(2)
-          } })
-        }
-      }))
+      .then(() => Galaxy.Generate(new Grid(), new Random('12')))
+    //   .then(() => generateNewGalaxie({
+    //     onUpdate: p => {
+    //       this.setState({ generation_progress: {
+    //         name: p.getCurrentActionName(),
+    //         percentage: (p.getProgress() * 100).toFixed(2)
+    //       } })
+    //     }
+    //   }))
       .then(world => {
         console.log('world', world);
         this.setState({ world })

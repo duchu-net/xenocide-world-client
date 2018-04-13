@@ -13,19 +13,19 @@
     "type": "git",
     "url": "git+https://github.com/duchu-net/xenocide-world-client.git"
   },
-  "author": "",
+  "author": "Patryk Androsiuk (http://duchu.net)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/duchu-net/xenocide-world-client/issues"
   },
   "homepage": "https://github.com/duchu-net/xenocide-world-client#readme",
   "dependencies": {
-    "xenocide-world-generator": "git+https://github.com/duchu-net/xenocide-world-generator.git",
     "material-ui": "^0.20.0",
     "prop-types": "^15.6.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-tap-event-plugin": "^3.0.2"
+    "react-tap-event-plugin": "^3.0.2",
+    "xenocide-world-generator": "git+https://github.com/duchu-net/xenocide-world-generator.git"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
