@@ -1,6 +1,7 @@
 import React from 'react'
 import { RaisedButton } from 'material-ui'
 import { Galaxy, Grid, Star, Random } from 'xenocide-world-generator'
+import Chart from './Chart'
 
 
 class App extends React.Component {
@@ -34,6 +35,9 @@ class App extends React.Component {
     const { children } = this.props
     return (
       <div>
+        <div>
+          {/* <Chart /> */}
+        </div>
         <RaisedButton
           label={'generate'}
           onClick={() => this.generate()}

@@ -23,6 +23,7 @@
     "material-ui": "^0.20.0",
     "prop-types": "^15.6.0",
     "react": "^15.6.1",
+    "react-d3-basic": "^1.6.11",
     "react-dom": "^15.6.1",
     "react-tap-event-plugin": "^3.0.2",
     "xenocide-world-generator": "git+https://github.com/duchu-net/xenocide-world-generator.git"
