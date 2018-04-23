@@ -1,9 +1,10 @@
 import React from 'react'
 import { RaisedButton } from 'material-ui'
-import { Galaxy, Grid, Star, Random } from 'xenocide-world-generator'
+import { Galaxy, Grid, Star, Random, Spiral } from 'xenocide-world-generator'
 import Chart from './Chart'
 import { Scene } from '../../modules/scene'
 import GalaxyScene from '../GalaxyScene'
+import './App.scss'
 
 
 class App extends React.Component {
@@ -18,7 +19,10 @@ class App extends React.Component {
     // console.log(Star, Random);
     // console.log(xeno);
     Promise.resolve()
-      .then(() => Galaxy.Generate(new Grid(), new Random('12')))
+      // .then(() => Galaxy.Generate(new Grid(), new Random('12')))
+      .then(() => Galaxy.Generate(new Spiral(), new Random(845689)))
+
+
     //   .then(() => generateNewGalaxie({
     //     onUpdate: p => {
     //       this.setState({ generation_progress: {
@@ -36,8 +40,8 @@ class App extends React.Component {
   render() {
     const { children } = this.props
     return (
-      <div>
-        <div>
+      <div className={'app_component'}>
+        <div className={'canvas'}>
           <GalaxyScene
             world={this.state.world}
           />
@@ -50,19 +54,21 @@ class App extends React.Component {
             </mesh>
           </Scene> */}
         </div>
-        <div>
-          {/* <Chart /> */}
+        {/* <div>
+          <Chart />
+        </div> */}
+        <div className={'overlay'}>
+          <RaisedButton
+            label={'generate'}
+            onClick={() => this.generate()}
+          />
+          <div>
+            {this.state.generation_progress.percentage} :: {this.state.generation_progress.name}
+          </div>
+          {/* <pre>
+            {JSON.stringify(this.state.world, null, 2)}
+          </pre> */}
         </div>
-        <RaisedButton
-          label={'generate'}
-          onClick={() => this.generate()}
-        />
-        <div>
-          {this.state.generation_progress.percentage} :: {this.state.generation_progress.name}
-        </div>
-        <pre>
-          {JSON.stringify(this.state.world, null, 2)}
-        </pre>
       </div>
     )
   }

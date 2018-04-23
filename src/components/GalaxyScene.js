@@ -9,7 +9,7 @@ class Simple extends React.Component {
 
     // construct the position vector here, because if we use 'new' within render,
     // React will think that things have changed when they have not.
-    this.cameraPosition = new THREE.Vector3(5, 5, 5);
+    this.cameraPosition = new THREE.Vector3(0, 750, 0);
 
     this.state = {
       cubeRotation: new THREE.Euler(),
@@ -47,9 +47,9 @@ class Simple extends React.Component {
           key={`gs_${i}`}
         >
           <boxGeometry
-            width={0.1}
-            height={0.1}
-            depth={0.1}
+            width={3}
+            height={3}
+            depth={3}
           />
           <meshBasicMaterial
             color={0x00ff00}
@@ -91,6 +91,7 @@ class Simple extends React.Component {
           fov={75}
           aspect={width / height}
           near={0.1}
+          // near={-1000}
           far={1000}
 
           position={this.cameraPosition}

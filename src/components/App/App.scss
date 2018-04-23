@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.app_component {
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
