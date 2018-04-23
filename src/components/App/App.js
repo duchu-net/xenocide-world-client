@@ -2,6 +2,8 @@ import React from 'react'
 import { RaisedButton } from 'material-ui'
 import { Galaxy, Grid, Star, Random } from 'xenocide-world-generator'
 import Chart from './Chart'
+import { Scene } from '../../modules/scene'
+import GalaxyScene from '../GalaxyScene'
 
 
 class App extends React.Component {
@@ -35,6 +37,19 @@ class App extends React.Component {
     const { children } = this.props
     return (
       <div>
+        <div>
+          <GalaxyScene
+            world={this.state.world}
+          />
+          {/* <Scene>
+            <mesh
+              // rotation={this.state.cubeRotation}
+            >
+              <boxGeometry width={3} height={3} depth={3} />
+              <meshLambertMaterial color={0xF3FFE2} />
+            </mesh>
+          </Scene> */}
+        </div>
         <div>
           {/* <Chart /> */}
         </div>
